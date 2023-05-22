@@ -60,11 +60,11 @@ sleep 2
 sample :drum_cymbal_closed
 ```
 
-In de Help van Sonic Pi kun je een lijst vinden van alle samples die ondersteund worden (linksonder in het venster).
+In de Help van Sonic Pi kun je een lijst vinden van alle samples die ondersteund worden (links onder in het venster).
 
 ## Herhalingen
 
-Muziek bevat vaak herhalingen van een melodietje, de volgende code herhaalt een melodie twee keer:
+Muziek bevat vaak herhalingen van een melodie, de volgende code herhaalt een melodie twee keer:
 
 ```ruby
 2.times do
@@ -105,7 +105,7 @@ live_loop :snare do
 end
 ```
 
-De code in live loops kan worden aangepast terwijl Sonic Pi de muziek afspeelt! Probeer het maar eens in het vorige voorbeeld: klik op "Run" en pas daarna bijvoorbeeld `rate: 0.75` aan naar `rate: 1.0`. Druk nogmaals op "Run" om de nieuwe code in te laden en luister wat er gebeurd (tip: `Alt+R` doet hetzelfde). Dit heet ook wel "live coding" en is een heel handige techniek om muziek spelender wijs te maken, door steeds kleine veranderingen te maken, en ze live te beluisteren.
+De code in live loops kan worden aangepast terwijl Sonic Pi de muziek afspeelt! Probeer het maar eens in het vorige voorbeeld: klik op "Run" en pas daarna bijvoorbeeld `rate: 0.75` aan naar `rate: 1.0`. Druk nogmaals op "Run" om de nieuwe code in te laden en luister wat er gebeurd (tip: `Alt+R` doet hetzelfde). Dit heet ook wel "live coding" en is een heel handige techniek om muziek spelenderwijs te maken, door steeds kleine veranderingen te maken, en ze live te beluisteren.
 
 ## Parameters
 
@@ -148,6 +148,49 @@ end
 ```
 
 Tip: Effecten kunnen, net als noten, worden veranderd met parameters.
+
+## Geavanceerd
+
+Een willekeurige noot kiezen:
+
+```ruby
+4.times do
+  play [:c, :d, :e].choose
+  sleep 0.25
+end
+```
+
+Noten op volgorde afspelen:
+
+```ruby
+live_loop :melodie do
+  play [:c, :d, :e, :f].tick
+  sleep 0.5
+end
+```
+
+Akkoorden spelen:
+
+```ruby
+play 57
+play 60
+play 64
+
+# is hetzelfde als:
+play [57, 60, 64]
+
+# is hetzelfde als:
+play (chord :a3, :minor)
+```
+
+Akkoorden, willekeurig en parameters:
+
+```ruby
+live_loop :first do
+  play chord(:a3, :minor).choose, attack: 0, release: 0.3, cutoff: 80
+  sleep 0.2
+end
+```
 
 ## Voorbeelden
 
