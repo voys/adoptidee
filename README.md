@@ -39,9 +39,9 @@ play :a
 
 ## Voorbeelden
 
-<./samples>
+In de map [samples](./samples) staan enkele voorbeelden.
 
-## Nuttige handleidingen
+## Nuttige handleidingen en bronnen
 
 - https://projects.raspberrypi.org/nl-NL/projects/getting-started-with-sonic-pi/2
 - https://sonic-pi.mehackit.org/exercises/en/01-introduction/01-introduction.html (alleen in Engels).
