@@ -88,6 +88,25 @@ Samples hebben allemaal een verschillende lengte, sommige zijn korter dan 1 seco
 end
 ```
 
+## Live loops
+
+In het algemeen wordt muziek gespeeld door meerdere artiesten en/of instrumenten. In Sonic Pi kun je dit bereiken met zogenaamde "live loops". Bijvoorbeeld:
+
+```ruby
+live_loop :kick do
+  sample :bd_haus, rate: 0.75
+  sleep 0.5
+end
+
+live_loop :snare do
+  sleep 0.5
+  sample :sn_dolf
+  sleep 0.5
+end
+```
+
+De code in live loops kan worden aangepast terwijl Sonic Pi de muziek afspeelt! Probeer het maar eens in het vorige voorbeeld: klik op "Run" en pas daarna bijvoorbeeld `rate: 0.75` aan naar `rate: 1.0`. Druk nogmaals op "Run" om de nieuwe code in te laden en luister wat er gebeurd (tip: `Alt+R` doet hetzelfde). Dit heet ook wel "live coding" en is een heel handige techniek om muziek spelender wijs te maken, door steeds kleine veranderingen te maken, en ze live te beluisteren.
+
 ## Voorbeelden
 
 In de map [samples](./samples) staan enkele voorbeelden.
