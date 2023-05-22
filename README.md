@@ -107,6 +107,48 @@ end
 
 De code in live loops kan worden aangepast terwijl Sonic Pi de muziek afspeelt! Probeer het maar eens in het vorige voorbeeld: klik op "Run" en pas daarna bijvoorbeeld `rate: 0.75` aan naar `rate: 1.0`. Druk nogmaals op "Run" om de nieuwe code in te laden en luister wat er gebeurd (tip: `Alt+R` doet hetzelfde). Dit heet ook wel "live coding" en is een heel handige techniek om muziek spelender wijs te maken, door steeds kleine veranderingen te maken, en ze live te beluisteren.
 
+## Parameters
+
+Vrijwel alle operaties in Sonic Pi kunnen worden aangepast met parameters. Bijvoorbeeld:
+
+```ruby
+play 60, sustain:2
+sleep 2
+play 60, attack:0.5
+sleep 1
+play 60, attack:0.1, sustain:0, release:0
+```
+
+Tip: Gebruik de autocomplete van Sonic Pi om de verschillende parameters te ontdekken!
+
+## Effecten
+
+Met effecten kun je het geluid van een stukje muziek veranderen. Probeer bijvoorbeeld eerst eens het volgende sample:
+
+```ruby
+sample :guit_e_fifths
+```
+
+En nu:
+
+```ruby
+with_fx :wobble do
+  sample :guit_e_fifths
+end
+```
+
+Of met nog een effect:
+
+```ruby
+with_fx :reverb do
+  with_fx :wobble do
+    sample :guit_e_fifths
+  end
+end
+```
+
+Tip: Effecten kunnen, net als noten, worden veranderd met parameters.
+
 ## Voorbeelden
 
 In de map [samples](./samples) staan enkele voorbeelden.
