@@ -37,6 +37,10 @@ sleep 0.25
 play :a
 ```
 
+## Voorbeelden
+
+<./samples>
+
 ## Nuttige handleidingen
 
 - https://projects.raspberrypi.org/nl-NL/projects/getting-started-with-sonic-pi/2
